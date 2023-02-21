@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 
+const name = "Halil"
+const surName = "koc"
+const isLoggedIn = true;
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // can use "<React.Fragment><React.Fragment/>" or <></> instead of div. Not recommend
+    <div>   
+      <h1>{isLoggedIn ? `Ad: ${name}  Soyad: ${surName}`: "Not connected"}</h1>
+      
     </div>
   );
 }
