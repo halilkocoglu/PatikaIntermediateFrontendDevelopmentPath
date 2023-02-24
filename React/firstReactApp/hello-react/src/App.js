@@ -29,11 +29,15 @@ function App() {
     // can use "<React.Fragment><React.Fragment/>" or <></> instead of div. Not recommend
     <div>   
       <User 
-      name="Jacob" 
+      // name="Jacob" 
       surname="Dave" 
       isLoggedIn={true} 
-      age={18}
+      age={19}
       friends={friends}
+      address={{
+        title: 'Aydin',
+        zip: '09350',
+      }}
       />
       
     </div>

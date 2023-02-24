@@ -13,32 +13,45 @@ import PropTypes from 'prop-types';
     );
 }
 */// Or
-function User({name, surname, age, isLoggedIn, friends}) {
-    
+function User({name, surname, age, isLoggedIn, friends, address}) {
+    if (!isLoggedIn) {
+        return <h1>Not Logged in</h1>
+    }
     return (
     <>
     <h1>
-        {
-        isLoggedIn 
-        ? `${name} ${surname} (${age})`  
-        : "Not logged in"
-        } 
+        {`${name} ${surname} (${age})`} 
     </h1>
+    
+    {address.title}  {address.zip}
+    <br/>
+    <br/>
     {
-        // friends.map((friend) => {
+// friends.map((friend) => {
 //     return <div key={friend.id}>{friend.name}</div>
 // })OR
+        friends && 
         friends.map(friend =><div key={friend.id}>{friend.name}</div> )
     }
     </>
     );
 }
 User.propTypes = {
-    name: PropTypes.string,
-    surname: PropTypes.string,
-    age: PropTypes.number,
-    isLoggedIn: PropTypes.bool,
+    name: PropTypes.string, // name is required
+    surname: PropTypes.string.isRequired,
+    age: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    //U can add prop types more than once with oneOfType as array
+    isLoggedIn: PropTypes.bool.isRequired,
     friends: PropTypes.array,
+    address: PropTypes.shape({
+        title: PropTypes.string,
+        zip: PropTypes.string,
+    })
+};
+
+User.defaultProps = {
+    isLoggedIn : false,
+    name : 'Guest',
 };
 
 export default User;
