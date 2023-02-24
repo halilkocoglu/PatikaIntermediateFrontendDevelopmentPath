@@ -1,13 +1,40 @@
 import './App.css';
+import User from './Components/User';
 
-const name = "Halil"
-const surName = "koc"
-const isLoggedIn = true;
+const friends = [
+  {
+    id: 1,
+    name: 'John',
+  },
+  {
+    id: 2,
+    name: 'Dave',
+  },
+  {
+    id: 3,
+    name: 'David',
+  },
+  {
+    id: 4,
+    name: 'Emily',
+  },
+  {
+    id: 5,
+    name: 'Melissa',
+  }
+]
+
 function App() {
   return (
     // can use "<React.Fragment><React.Fragment/>" or <></> instead of div. Not recommend
     <div>   
-      <h1>{isLoggedIn ? `Ad: ${name}  Soyad: ${surName}`: "Not connected"}</h1>
+      <User 
+      name="Jacob" 
+      surname="Dave" 
+      isLoggedIn={true} 
+      age={18}
+      friends={friends}
+      />
       
     </div>
   );
