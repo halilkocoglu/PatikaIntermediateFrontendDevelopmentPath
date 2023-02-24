@@ -37,7 +37,7 @@ function User({name, surname, age, isLoggedIn, friends, address}) {
     );
 }
 User.propTypes = {
-    name: PropTypes.string, // name is required
+    name: PropTypes.string.isRequired, // name is required
     surname: PropTypes.string.isRequired,
     age: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     //U can add prop types more than once with oneOfType as array
