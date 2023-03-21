@@ -1,12 +1,23 @@
-import React from 'react'
+import {useState} from 'react'
 
-function Header() {
+function Header(items) {
+    const [task, setTask] = useState("")
+    function handleInput(event) {
+        setTask(event.target.value);
+        
+    }
+    
+    
+    
     return (
         <div>
-            <header class="header">
+            <header className="header">
                     <h1>ToDos</h1>
-                    <form>
-                        <input class="new-todo" placeholder="What needs to be done?" autoFocus />
+                    <form >
+                        <input className="new-todo" 
+                        placeholder="What needs to be done?" 
+                        
+                        autoFocus />
                     </form>
                 </header>
         </div>
