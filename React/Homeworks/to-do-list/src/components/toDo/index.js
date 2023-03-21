@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from './footer'
 import ToDoList from './toDoList'
+import "./Style.css"
 
 function ToDo() {
     const [input, setInput] = useState("");
@@ -35,7 +36,7 @@ function ToDo() {
         setItems(items.filter((item, i) => i !== index));
     }
     return (
-        <div>
+        <div className='container'>
             <h1 className="todos-text">todos</h1>
             <div className="notebookContainer">
                 <div className="inputContainer">
