@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import A from './components/A';
+import B from './components/B';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header" style={{padding:"30px"}}>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,6 +22,8 @@ function App() {
           <a href="#" className="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+      <A/>
+      <B/>
       </header>
     </div>
   );
