@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
-
+import axios from 'axios';
 function Users() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-        .then(res => res.json())
-        .then(data => setUsers(data))
+        // fetch("https://jsonplaceholder.typicode.com/users")
+        // .then(res => res.json())
+        axios("https://jsonplaceholder.typicode.com/users")
+        .then(res => setUsers(res.data))
         .catch(err => console.log(err))
         .finally (() => setIsLoading(false))
     }, [])
