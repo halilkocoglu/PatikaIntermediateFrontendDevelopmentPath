@@ -9,6 +9,8 @@ import {
 import Users from './components/Users';
 import Home from './components/Home';
 import About from './components/About';
+import User from './components/User';
+import NoMatch from './components/NoMatch';
 
 function App() {
   return (
@@ -33,8 +35,10 @@ function App() {
         <Routes>
           <Route path="/about" element= {<About />} />
           <Route path="/users" element= {<Users />} />
+          <Route path="/user/:id" element= {<User />} />
           <Route path="/" element= {<Home />} />
-
+          <Route path="*" element= {<NoMatch />} />
+          
         </Routes>
       </div>
     </Router>
