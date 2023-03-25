@@ -34,8 +34,9 @@ function App() {
             renders the first one that matches the current URL. */}
         <Routes>
           <Route path="/about" element= {<About />} />
-          <Route path="/users" element= {<Users />} />
-          <Route path="/user/:id" element= {<User />} />
+          <Route path="/users" element= {<Users />}>
+            <Route path=":id" element= {<User />} />
+          </Route>
           <Route path="/" element= {<Home />} />
           <Route path="*" element= {<NoMatch />} />
           
