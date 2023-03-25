@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.active {
+  background-color: cadetblue;
+  color: white;
+  border: 3px;
+  border-style: solid;
+  border-color: blue;
+}

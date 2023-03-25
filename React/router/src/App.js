@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  NavLink
 } from "react-router-dom";
 //pages
 import Users from './components/Users';
@@ -16,16 +16,16 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
+        <nav className='nav-bar'>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink  to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
         </nav>
