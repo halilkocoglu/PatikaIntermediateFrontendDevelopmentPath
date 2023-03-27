@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header({number, data}) {
+function Header({number, inc}) {
     console.log("Header re-rendered");
     return (
         <div>
@@ -8,7 +8,8 @@ function Header({number, data}) {
             {number}
 
             <br /><br />
-            <code>{JSON.stringify(data)}</code>
+            <button onClick={ inc } > Click </button>
+
         </div>
     )
 }
