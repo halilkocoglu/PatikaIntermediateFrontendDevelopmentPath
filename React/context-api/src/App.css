@@ -1,0 +1,15 @@
+.App.light {
+  text-align: center;
+  min-height: 100vh;
+  justify-content: center;
+  font-size: x-large;  
+}
+
+.App.dark {
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  justify-content: center;
+  color: white;
+  font-size: x-large;  
+}
