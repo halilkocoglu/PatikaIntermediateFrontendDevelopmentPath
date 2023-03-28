@@ -1,12 +1,12 @@
 import './App.css';
-import Button from './components/Button';
-import ThemeContext from './context/ThemeContext';
+import Container from './components/Container';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <ThemeContext.Provider value={"dark"}>
-      <Button />
-    </ThemeContext.Provider>
+    <ThemeProvider>
+      <Container/>
+    </ThemeProvider>
   );
 }
 
