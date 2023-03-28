@@ -5,7 +5,6 @@ import Header from './Header'
 
 function Container() {
     const {theme} = useContext(ThemeContext)
-    console.log(theme);
     return (
         <div className = {`App ${theme}`}>
             <Header/>
