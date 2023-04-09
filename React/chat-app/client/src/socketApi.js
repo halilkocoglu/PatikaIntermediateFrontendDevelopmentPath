@@ -11,5 +11,23 @@ const init= () => {
         console.log("connected");
     });
 }
+const sendMessage = (message) =>{
+    if ( socket ) {
+        socket.emit("new-message", message)
+    }
+} 
 
-export  {init};
+const subscribeChat = (cb) => {
+    if(!socket) return;
+
+    socket.on ("receive-message", (message) => {
+        console.log("new-message:", message);
+        cb(message);
+    } )
+}
+
+export  {
+    init,
+    sendMessage,
+    subscribeChat
+};
