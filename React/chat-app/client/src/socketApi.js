@@ -26,8 +26,17 @@ const subscribeChat = (cb) => {
     } )
 }
 
+const subscribeInitialsMessages = (cb) => {
+    if(!socket) return;
+
+    socket.on ("message-list", (messages) => {
+        console.log("Initial:", messages);
+        cb(messages);
+    } )
+}
 export  {
     init,
     sendMessage,
-    subscribeChat
+    subscribeChat,
+    subscribeInitialsMessages,
 };
