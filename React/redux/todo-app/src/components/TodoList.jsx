@@ -1,32 +1,23 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteTodo, toggleTodo } from '../redux/todos/todosSlice';
+import { deleteTodo, toggleTodo, selectFilteredTodos } from '../redux/todos/todosSlice';
 
 
 function TodoList() {
     //4. define state as a var with use selector 
     const dispatch = useDispatch()
-    const items = useSelector(state => state.todos.items)
-    const activeFilter = useSelector(state => state.todos.activeFilter)
-
+    const filteredTodos = useSelector(selectFilteredTodos)
     const handleDelete= (item) => {
         if(window.confirm(`Are you sure you want to delete '${item.title}' task?`)){
             dispatch(deleteTodo(item.id))
         }
     };
-let filtered = items;
-    if ( activeFilter !== 'all') {
-        filtered = items.filter(item => 
-            activeFilter === 'active'
-            ? item.completed === false 
-            : item.completed === true 
-            )
-    }
-    console.log(items);
+
+    console.log(filteredTodos);
   return (
     <ul className="todo-list">
         {
-            filtered.map((item) => {
+            filteredTodos.map((item) => {
             return(
             <li key={item.id} className={item.completed ? "completed" : ""}>
                 <div className="view">

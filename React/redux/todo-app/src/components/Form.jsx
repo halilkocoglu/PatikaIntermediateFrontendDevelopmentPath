@@ -7,6 +7,7 @@ function Form() {
   const [textInput, setTextInput] = useState("")
   const dispatch = useDispatch()
   const handleSubmit = (e) => {
+    if(!textInput) return;
     e.preventDefault();
     //nano id is an id generator library under '@reduxjs/toolkit'
     dispatch(addTodo({ id: nanoid(), title: textInput, completed: false }))
